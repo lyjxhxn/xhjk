@@ -51,7 +51,7 @@ VPNGATE_MIRROR = os.environ.get(
     "https://raw.githubusercontent.com/fdciabdul/Vpngate-Scraper-API/main/json/data.json",
 )
 # 已部署的 Cloudflare Worker 检测接口 (GET /check?proxyip=host:port, 实测确认)
-WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://check.helei.kdns.fr/check?sstp=vpn:vpn@")
+WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://xhjk.lyjxhxn.dpdns.org/check?sstp=vpn:vpn@")
 CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "32")))   # 与 Worker 网页端一致的并发模型
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))          # 单请求客户端超时 (秒)
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))         # 0=不限; 本地测试可设小值
@@ -460,8 +460,25 @@ EDGE_HOSTS = [
     h.strip()
     for h in os.environ.get(
         "EDGE_HOSTS",
-        "saas.072159.xyz:443,hzytjy.cn:443,ali.nonull.pp.ua:443,auto.dolby.dpdns.org:443,"
-        "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
+"gitlab.com:443,i.pixiv.re:443,time.is:443,47bt.com:443,crinacle.com:443,www.swowd.com:443,academy.mastercard.com:443,aftership.com:443,dev.graco.com:443,nodejs.org:443,"
+"cf.92555.xyz:443,jojolsj.jojojing.top:443,hostinger.com:443,singapore.com:443,japan.com:443,img.imgdd.com:443,nodeloc.cc:443,de.102198.xyz:443,registry.yarnpkg.com:443,bitsight.com:443,"
+"js.org:443,www.chess.com:443,brandstudio.com:443,www.revechat.com:443,worldvectorlogo.com:443,sharray.net:443,packtpub.com:443,zabc.net:443,my.vultr.com:443,wallpaperflare.com:443,"
+"yong.880805.xyz:443,sci-hub.al:443,autz.org:443,duckybot.xyz:443,fbi.gov:443,api.uniapi.io:443,helium.computer:443,smapi.xystem138.com:443,ip.sb:443,zen-browser.app:443,"
+"pt.btschool.club:443,www.ventusky.com:443,cf2.996616.xyz:443,img.dexbug.com:443,9mod.com:443,investorrelations.medtronic.com:443,development.ihg.com:443,easylist.to:443,icook.hk:443,www.donaldjtrump.com:443,"
+"noc.one:443,cloudflare.tv:443,glitterx.cloud:443,flightradar24.com:443,mox.moxing.lol:443,hlevakha.gov.ua:443,kernelsu.com:443,bizclikmedia.com:443,www.spacex.com:443,pure.coupert.com:443,"
+"www.npmjs.com:443,infinitemac.org:443,codeforces.com:443,totoro.im:443,digitalocean.com:443,support.communilink.net:443,linkvertise.com:443,fonts.cdnfonts.com:443,grass.io:443,emos.best:443,"
+"www.hypixel.net:443,themeisle.com:443,gateway.ipfsscan.io:443,cdnjs.com:443,api.producthunt.com:443,iskills.com:443,cdn.tzpro.xyz:443,ncdc.gov.ng:443,jquery.com:443,www.libvio.site:443,"
+"dx.doi.org:443,moondroplab.com:443,skk.moe:443,www.jsdelivr.com:443,sunkist.com:443,sanctuarywealth.com:443,sourceforge.net:443,zoominfo.com:443,i.jpg.dog:443,t.213891.xyz:443,"
+"mvnrepository.com:443,cdn.violet.vin:443,newsroom.avalara.com:443,www.people.inc:443,cdnjs.loli.net:443,xiaoqi.de:443,cm.edu.kg:443,www.lbl.gov:443,unpkg.com:443,iili.io:443,"
+"deepseek.com.hk:443,uptimerobot.com:443,www.owlgraphic.com:443,vueframework.com:443,rocketreach.co:443,mrmacintosh.com:443,journeys.com:443,s.ee:443,www.copilot.com:443,www.trumpstruth.org:443,"
+"registry.npmjs.org:443,api2-ide.imgnxa.com:443,www.pixelexperience.org:443,lose.edu.eu.org:443,hashi.sbs:443,www.meteorelectrical.com:443,assets.bizclikmedia.net:443,help.kolet.com:443,rargb.to:443,sellerlogic.com:443,"
+"dl.macked.app:443,seo.07yue.com:443,cn.vuejs.org:443,www.roche.com:443,dogechain.info:443,griditapp.com:443,cdn.nodeimage.com:443,duggal.com:443,fictiv.com:443,vegasgeek.com:443,"
+"kwiat.com:443,www.redboxtools.com:443,xn--b6gac.eu.org:443,www.botafogo.com.br:443,upfile.live:443,app.rebase.tv:443,www.canadatype.com:443,form.assaabloy.com:443,ys2046.cv:443,www.doiting.com:443,"
+"kick.com:443,alternativeto.net:443,example.com:443,i.pages.dev:443,shen6011.pages.dev:443,dexari.com:443,www.eccu.edu:443,securecircle.com:443,uspto.gov:443,thebeat.gehealthcare.com:443,"
+"wppaunz.com:443,coreweave.com:443,cfplus.255520.xyz:443,www.gov.il:443,garuda-indonesia.com:443,cf.254301.xyz:443,www.stayaka.com:443,www.itedev.com:443,www.bis.gov:443,stores.staples.com:443,"
+"www.dentoncounty.gov:443,www.crazygames.fr:443,www.wto.org:443,ikankeji.com:443,kickstarter.com:443,hentaiverse.org:443,www2.rarbggo.to:443,liziye.pages.dev:443,syncfusion.com:443,nist.gov:443,"
+"neko.cloudflaree.eu.org:443,spring.io:443,www.blibli.com:443,www.vmware.com:443,hitcon.org:443,www.deepl.com:443,www.zendesk.com:443,icook.tw:443,static.elfsight.com:443,constitution.congress.gov:443,"
+"funko.com:443,egov.uscis.gov:443,cf.yj250.bond:443,i.pixiv.nl:443,login.rockwellautomation.com:443",
     ).split(",")
     if h.strip()
 ]
@@ -522,8 +539,8 @@ def build_hosts_text(data):
 
 
 # edgetunnel 完整订阅 (vless://) 配置
-EDT_UUID = os.environ.get("EDT_UUID", "90c14586-42a5-4c30-959d-8b36608d67f7")
-EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "ed.xiaolei.qzz.io")
+EDT_UUID = os.environ.get("EDT_UUID", "ead4f938-555a-4c40-95ed-4f2905e53c39")
+EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "dalao.lyjxhxn.dpdns.org")
 EDT_FINGERPRINT = os.environ.get("EDT_FINGERPRINT", "chrome")
 SUB_URL = os.environ.get("SUB_URL", "https://jerylihub.github.io/gate/sub.txt")
 
